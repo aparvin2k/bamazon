@@ -17,20 +17,20 @@ inventory (less than 10 items in stock), choose to add to the inventory, and eve
 ### Screenshots of Working App
 
 Bamazon Customer
-![step 1](images/step 1 bamazonCustomer.png?raw=true)
-![step 2](images/step 2 bamazonCustomer.png?raw=true)
-![step 3](images/step 3 bamazonCustomer.png?raw=true)
-![step 4](images/step 4 bamazonCustomer.png?raw=true)
-![step 5](images/step 5 bamazonCustomer.png?raw=true)
-![step 6](images/step 6 bamazonCustomer.png?raw=true)
+![step 1](images/step 1 bamazonCustomer.png?raw=true),
+![step 2](images/step 2 bamazonCustomer.png?raw=true),
+![step 3](images/step 3 bamazonCustomer.png?raw=true),
+![step 4](images/step 4 bamazonCustomer.png?raw=true),
+![step 5](images/step 5 bamazonCustomer.png?raw=true),
+![step 6](images/step 6 bamazonCustomer.png?raw=true),
 
 Bamazon Manager
-![step 1](images/step 1 bamazonManager.png?raw=true)
-![step 2](images/step 2 bamazonManager.png?raw=true)
-![step 3](images/step 3 bamazonManager.png?raw=true)
-![step 4](images/step 4 bamazonManager.png?raw=true)
-![step 5](images/step 5 bamazonManager.png?raw=true)
-![step 6](images/step 6 bamazonManager.png?raw=true)
+![step 1](images/step 1 bamazonManager.png?raw=true),
+![step 2](images/step 2 bamazonManager.png?raw=true),
+![step 3](images/step 3 bamazonManager.png?raw=true),
+![step 4](images/step 4 bamazonManager.png?raw=true),
+![step 5](images/step 5 bamazonManager.png?raw=true),
+![step 6](images/step 6 bamazonManager.png?raw=true),
 ![step 7](images/step 7 bamazonManager.png?raw=true)
 
 
