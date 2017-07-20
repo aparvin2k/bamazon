@@ -33,7 +33,7 @@ function start() {
         type: "list",
         name: "actions",
         message: "Welcome Manager. What would you like to review?",
-        choices: ["View Products For Sale", "View Low Inventory", "Add To Inventory", "Add New Product"]
+        choices: ["View Products For Sale", "View Low Inventory", "Add To Inventory", "Add New Product", "Exit"]
 
     }]).then(function(user) {
         if (user.actions === "View Products For Sale") {
