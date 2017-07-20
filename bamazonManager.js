@@ -42,8 +42,10 @@ function start() {
             viewLowInventory();
         } else if (user.actions === "Add To Inventory") {
             addInventory();
-        } else {
+        } else if (user.actions === "Add New Product") {
             addProduct();
+        } else {
+            exit();
         }
     });
 }
@@ -155,7 +157,7 @@ function addInventory() {
         }
     ]).then(function(managerAdd) {
               connection.query("SELECT * FROM products", function(err, res) {
-                var tableArr = [],
+                var tableArr = [];
                 for (var i = 0; i < res.length; i++) {
 
                 var itemId = res[i].item_id,
@@ -261,3 +263,9 @@ function addProduct() {
       start();
     });
   }
+
+//=================================Exit Program===============================
+
+function exit() {
+    connection.end();
+}
