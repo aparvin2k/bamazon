@@ -17,45 +17,45 @@ inventory (less than 10 items in stock), choose to add to the inventory, and eve
 ### Screenshots of Working App
 
 # Bamazon Customer <h1> 
-1. Step 1
+# Step 1 <h3>
 ![step 1](images/step_1_bamazonCustomer.PNG);
 
-2. Step 2
+# Step 2 <h3>
 ![step 2](images/step_2_bamazonCustomer.PNG);
 
-3. Step 3
+# Step 3 <h3>
 ![step 3](images/step_3_bamazonCustomer.PNG);
 
-4. Step 4
+# Step 4 <h3>
 ![step 4](images/step_4_bamazonCustomer.PNG);
 
-5. Step 5
+# Step 5 <h3>
 ![step 5](images/step_5_bamazonCustomer.PNG);
 
-6. Step 6
+# Step 6 <h3>
 ![step 6](images/step_6_bamazonCustomer.PNG);
 
 # Bamazon Manager <h1> 
 
-1. Step 1
+# Step 1 <h3>
 ![step 1](images/step_1_bamazonManager.PNG);
 
-2. Step 2
+# Step 2 <h3>
 ![step 2](images/step_2_bamazonManager.PNG);
 
-3. Step 3
+# Step 3 <h3>
 ![step 3](images/step_3_bamazonManager.PNG);
 
-4. Step 4
+# Step 4 <h3>
 ![step 4](images/step_4_bamazonManager.PNG);
 
-5. Step 5
+# Step 5 <h3>
 ![step 5](images/step_5_bamazonManager.PNG);
 
-6. Step 6
+# Step 6 <h3>
 ![step 6](images/step_6_bamazonManager.PNG);
 
-7. Step 7
+# Step 7 <h3>
 ![step 7](images/step_7_bamazonManager.PNG);
 
 
