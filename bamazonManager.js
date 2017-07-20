@@ -108,7 +108,7 @@ function viewLowInventory() {
 
                 //check if any of the stock_quantity equals 5 or less
 
-                if (res[i].stock_quantity <= 10) {
+                if (res[i].stock_quantity < 10) {
 
                     var itemId = res[i].item_id,
                         productName = res[i].product_name,
