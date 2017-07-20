@@ -156,39 +156,57 @@ function addInventory() {
                     }
         }
     ]).then(function(managerAdd) {
-              connection.query("SELECT * FROM products", function(err, res) {
-                var tableArr = [];
-                for (var i = 0; i < res.length; i++) {
 
-                var itemId = res[i].item_id,
-                    productName = res[i].product_name,
-                    departmentName = res[i].department_name,
-                    price = res[i].price,
-                    stockQuantity = res[i].stock_quantity;
+        //connect to database to find stock_quantity in database. If user quantity input is greater than stock, decline purchase.
 
-                    tableArr.push(
-                        [itemId, productName, departmentName, price, stockQuantity]
-                    );
-            }
+        connection.query("SELECT * FROM products WHERE item_id=?", managerAdd.id, function(err, res) {
+
+                    var newStock = (res[0].stock_quantity + parseInt(managerAdd.number));
+                    var purchaseId = (managerAdd.id);
+                    //console.log(newStock);
+                    confirm(newStock, purchaseId);           
         });
+    });
+}
 
-              connection.query("UPDATE products SET ? WHERE ?", [
-              {
+//=================================Confirm Inventory===============================
 
-                  stock_quantity: managerAdd.number 
-              }, 
-              {
-                  item_id: managerAdd.id
-              }
-              ], 
-              function(err, res) {
-                if (err) throw err;
+function confirm(newStock, purchaseId) {
 
-              });
-          start();
-        });
-      }
+    inquirer.prompt([{
 
+        type: "confirm",
+        name: "confirm",
+        message: "Are you sure you would like to increase this items stock?",
+        default: true
+
+    }]).then(function(userConfirm) {
+        if (userConfirm.confirm === true) {
+
+            //if user confirms purchase, update mysql database with new stock quantity by subtracting user quantity purchased.
+
+            connection.query("UPDATE products SET ? WHERE ?", [
+            {
+                stock_quantity: newStock
+            }, 
+            {
+                item_id: purchaseId
+            }], 
+            function(err, res) {});
+
+            var content = ("=================================" + "\nStock quantity added to inventory. Thank you." +
+                        "\n=================================");
+            console.log(content);
+            start();
+        } else {
+
+            var message = ("=================================" + "\nNo worries. Maybe next time!" +
+                        "\n=================================");
+            console.log(message);
+            start();
+        }
+    });
+}
 
 //=================================Add New Product===============================
 

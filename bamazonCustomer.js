@@ -144,7 +144,7 @@ function selectionQ() {
 
             	if (userPurchase.number > res[i].stock_quantity) {
 
-                	var content = ("===================================================" + 
+                	var content = ("\n===================================================" + 
                 					"\nSorry! Not enough in stock. Please try again later." + 
                 					"\n===================================================");
                     console.log(content);
@@ -152,7 +152,7 @@ function selectionQ() {
 
                 } else {
                     //list item information for user for confirm prompt
-                    var message = ("===================================" + "\nAwesome! We can fulfull your order." + 
+                    var message = ("\n===================================" + "\nAwesome! We can fulfull your order." + 
                     			"\n===================================" + "\nYou've selected:" + "\n----------------" +
                     			"\nItem: " + res[i].product_name + "\nDepartment: " + res[i].department_name +
                     			"\nPrice: " + res[i].price + "\nQuantity: " + userPurchase.number + "\n----------------" +
