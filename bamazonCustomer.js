@@ -24,6 +24,7 @@ connection.connect(function(err) {
     start();
 });
 
+var count = 0;
 //=================================Inquirer introduction===============================
 
 function start() {
@@ -77,6 +78,7 @@ function inventory() {
           }
           	var content =("\n" + "\n========================== Current Bamazon Inventory ===========================" + table.toString());
           	console.log(content);
+            count = res.length;
             continueQ();
         });
     }
@@ -113,25 +115,26 @@ function selectionQ() {
             name: "id",
             message: "Please enter the ID number of the item you would like to purchase.",
             validate: function(value) {
-          			if (isNaN(value) === false) {
-            			return true;
-          				}
-          				console.log("\nPlease enter a valid number");
-          				return false;
-        			}
+          			if (value <= 0 || value > count) {
+                        return "Please input a valid id";
+                    } else if (isNaN(value)) {
+                        return "Please input the item's id";
+                    }
+                    return true;
+                }
         },
         {
             type: "input",
             name: "number",
             message: "How many units of this item would you like to purchase?",
             validate: function(value) {
-          			if (isNaN(value) === false) {
-            			return true;
-          				}
-          				console.log("\nPlease enter a valid number");
-          				return false;
+                    if (value < 0) {
+                        return "Please input a positive number";
+                    } else if (isNaN(value)) {
+            			return "Please input a valid amount";
+          			} 
+                    return true;
         			}
-
         }
     ]).then(function(userPurchase) {
 
