@@ -119,6 +119,8 @@ function selectionQ() {
                         return "Please input a valid id";
                     } else if (isNaN(value)) {
                         return "Please input the item's id";
+                    } else if (!isInt(value)) {
+                        return "Please input a valid integer";
                     }
                     return true;
                 }
@@ -132,7 +134,9 @@ function selectionQ() {
                         return "Please input a positive number";
                     } else if (isNaN(value)) {
             			return "Please input a valid amount";
-          			} 
+          			}  else if (!isInt(value)) {
+                        return "Please input a valid integer";
+                    }
                     return true;
         			}
         }
@@ -210,5 +214,12 @@ function confirm(newStock, purchaseId) {
             start();
         }
     });
+}
+
+//========================Check if Value is an integer========================
+
+function isInt(value) {
+  var x = parseFloat(value);
+  return !isNaN(value) && (x | 0) === x;
 }
 
