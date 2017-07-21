@@ -24,6 +24,8 @@ connection.connect(function(err) {
     start();
 });
 
+var count = 0;
+
 //=================================Inquirer introduction===============================
 
 function start() {
@@ -82,6 +84,7 @@ function viewInventory() {
             }
             var content =("\n" + "\n========================== Current Bamazon Inventory ===========================" + table.toString());
             console.log(content);
+            count = res.length;
             start();
         });
     }
@@ -123,6 +126,7 @@ function viewLowInventory() {
             }
             var content =("\n" + "\n========== Low Bamazon Inventory (Less than 10 items in Inventory) =============" + table.toString());
             console.log(content);
+            count = res.length;
             start();
         });
     }
@@ -136,23 +140,27 @@ function addInventory() {
 
             type: "input",
             name: "id",
-            message: "Please enter the ID number of the item you would like to add inventory to.",
+            message: "Please enter the ID number of the item you would like to purchase.",
             validate: function(value) {
-                    if (isNaN(value) === false) {
-                        return true;
-                        }
-                        return false;
+                    if (value <= 0 || value > count) {
+                        return "Please input a valid id";
+                    } else if (isNaN(value)) {
+                        return "Please input the item's id";
                     }
+                    return true;
+                }
         },
         {
             type: "input",
             name: "number",
-            message: "How many units of this item would you like to have in the in-store stock quantity?",
+            message: "How many units of this item would you like to purchase?",
             validate: function(value) {
-                    if (isNaN(value) === false) {
-                        return true;
-                        }
-                        return false;
+                    if (value < 0) {
+                        return "Please input a positive number";
+                    } else if (isNaN(value)) {
+                        return "Please input a valid amount";
+                    } 
+                    return true;
                     }
         }
     ]).then(function(managerAdd) {
@@ -246,11 +254,12 @@ function addProduct() {
             name: "price",
             message: "Please enter the price of the new product (0.00).",
             validate: function(value) {
-                    if (isNaN(value) === false) {
-                        return true;
-                        }
-                        console.log("\nPlease enter a valid price");
-                        return false;
+                    if (value < 0) {
+                        return "Please input a positive price";
+                    } else if (isNaN(value)) {
+                        return "Please input a valid amount";
+                    } 
+                    return true;
                     }
         },
         {
@@ -258,11 +267,12 @@ function addProduct() {
             name: "stock",
             message: "Please enter the stock quantity of the new product.",
             validate: function(value) {
-                    if (isNaN(value) === false) {
-                        return true;
-                        }
-                        console.log("\nPlease enter a valid price");
-                        return false;
+                    if (value < 0) {
+                        return "Please input a positive number";
+                    } else if (isNaN(value)) {
+                        return "Please input a valid amount";
+                    } 
+                    return true;
                     }
         }
 
